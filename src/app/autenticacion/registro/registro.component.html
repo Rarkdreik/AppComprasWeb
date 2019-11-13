@@ -1,0 +1,39 @@
+<!-- <div class="row">
+  <div class="col-md-6 offset-md-3">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <h4>Introduzca sus datos de registro</h4>
+      <label>Correo Electrónico</label>
+      <input type="email" id="inputEmail" class="form-control" formControlName="email" autofocus>
+      <label>Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" formControlName="password">
+      <hr>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>
+</div> -->
+
+<div class="row jumbotron">
+  <div class="col-md-6 offset-md-3">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <h1>Registrarse</h1>
+      <br>
+      <label>Correo Electrónico</label>
+      <input type="email" id="inputEmail" class="form-control" formControlName="email" autofocus>
+      <label>Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" formControlName="password">
+      <br>
+      <div class="text-center botonesSeparados">
+        <button type="submit" class="btn btn-primary btn-lg">Registrar Cuenta</button>
+        <a href="registro#" title="Google+" class="btn btn-googleplus btn-lg" (click)="iniciarSesionGoogle()">
+          <i class="fa fa-google-plus fa-fw"></i> Google+
+        </a>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" routerLink="/sesion">Ir a Iniciar Sesión</button>
+      </div>
+    </form>
+  </div>
+</div>
