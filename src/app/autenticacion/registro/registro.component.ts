@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators, } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -33,7 +33,7 @@ export class RegistroComponent implements OnInit {
       Swal.fire({
         icon: 'success',
         title: 'Cuenta Activada',
-        text: 'La cuenta ya ha sido activada, disfruta de AppCompras.',
+        text: 'La cuenta ya ha sido activada, disfruta de Compras App.',
         type: 'success'
       });
       this.router.navigateByUrl('/inicio');
@@ -65,7 +65,7 @@ export class RegistroComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Sesion Iniciada',
-          text: 'Se ha iniciado la sesion correctamente, disfruta de AppCompras.',
+          text: 'Se ha iniciado la sesion correctamente, disfruta de Compras App.',
           type: 'success'
         }).then(() => {
           this.router.navigateByUrl('/inicio');

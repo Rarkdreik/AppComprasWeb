@@ -8,6 +8,7 @@ import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.
 import { EditpresComponent } from './presupuestos/editpres/editpres.component';
 import { RegistroComponent } from './autenticacion/registro/registro.component';
 import { LoginComponent } from './autenticacion/login/login.component';
+import { EditproveeComponent } from './proveedores/editprovee/editprovee.component';
 
 import { AuthGuard } from './core/auth.guard';
 
@@ -15,10 +16,10 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
   { path: 'proveedores', component: ProveedoresComponent, canActivate: [AuthGuard] },
-  { path: 'presupuestos', component: PresupuestosComponent, canActivate: [AuthGuard] },
   { path: 'addprovee', component: AddproveeComponent, canActivate: [AuthGuard] },
+  { path: 'editprovee/:id', component: EditproveeComponent, canActivate: [AuthGuard] },
+  { path: 'presupuestos', component: PresupuestosComponent, canActivate: [AuthGuard] },
   { path: 'addpres', component: AddpresComponent, canActivate: [AuthGuard] },
-  // { path: 'editpres', component: EditpresComponent, canActivate: [AuthGuard] },
   { path: 'editpres/:id', component: EditpresComponent, canActivate: [AuthGuard] },
   { path: 'sesion', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },

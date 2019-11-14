@@ -26,6 +26,7 @@ import { AuthService } from './core/auth.service';
 import { LoginComponent } from './autenticacion/login/login.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { EditproveeComponent } from './proveedores/editprovee/editprovee.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EditpresComponent,
     RegistroComponent,
     LoginComponent,
+    EditproveeComponent,
   ],
   imports: [
     BrowserModule,

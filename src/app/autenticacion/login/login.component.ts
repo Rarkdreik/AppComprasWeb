@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -25,18 +25,18 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.userdata = this.saveUserdata();
     this.authService.loginUsuario(this.userdata)
-    .then(() => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Cuenta Activada',
-        text: 'La cuenta ya ha sido activada, disfruta de AppCompras.',
-        type: 'success'
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Sesión Iniciada',
+          text: 'La sesión ha sido iniciada, disfruta de ComprasApp.',
+          type: 'success'
+        });
+        this.router.navigateByUrl('/inicio');
+      })
+      .catch((error) => {
+        this.authService.alertas(error);
       });
-      this.router.navigateByUrl('/inicio');
-    })
-    .catch((error) => {
-      this.authService.alertas(error);
-    });
     this.resetFields();
   }
 
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Sesion Iniciada',
-          text: 'Se ha iniciado la sesion correctamente, disfruta de AppCompras.',
+          text: 'Se ha iniciado la sesion correctamente, disfruta de ComprasApp.',
           type: 'success'
         }).then(() => {
           this.router.navigateByUrl('/inicio');

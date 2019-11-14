@@ -5,3 +5,63 @@ pre {
   border-radius: 5px;
   padding: 10px;
 }
+
+label {
+  margin-right: 5px;
+}
+
+@media (max-width: 1300px) {
+  .tabla1 {
+    display: block;
+  }
+}
+
+@media (min-width: 1301px) {
+  .tabla1 {
+    display: block;
+  }
+}
+
+@media (max-width: 990px) {
+  .tabla2 {
+    display: block;
+  }
+}
+
+@media (min-width: 991px) {
+  .tabla2 {
+    display: table;
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border-left: 5px solid #a94442;
+}
+
+input.ng-valid.ng-dirty {
+  border-left: 5px solid #42A948;
+}
+
+select.ng-invalid.ng-touched {
+  border-left: 5px solid #a94442;
+}
+
+select.ng-valid.ng-dirty {
+  border-left: 5px solid #42A948;
+}
+
+.check {
+  color: #42A948;
+}
+
+.uncheck {
+  color: #a94442;
+}
+
+.jumbotron {
+  background-color: #a1b2c4;
+}
+
+.float-md-right {
+  margin: 0px 0px 0px auto !important;
+}

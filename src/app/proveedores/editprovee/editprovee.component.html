@@ -1,6 +1,6 @@
 <div class="row jumbotron">
   <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <h2>Añadir nuevo proveedor</h2>
+    <h2>Editar proveedor</h2>
     <a class="btn btn-primary float-md-right" routerLink="/proveedores">Regresar al listado</a>
     <br>
     <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
@@ -8,73 +8,73 @@
         <label for="nombre">Nombre</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.nombre.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.nombre.invalid && !!proveedorForm.controls.nombre.touched"></i>
-        <input type="text" class="form-control" id="nombre" formControlName="nombre" required>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="proveedor.nombre" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.nombre.invalid && !!proveedorForm.controls.nombre.touched">
-          El campo Nombre es obligatorio.
+          El campo Proveedor es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="cif">C.I.F.</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.cif.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.cif.invalid && !!proveedorForm.controls.cif.touched"></i>
-        <input type="text" class="form-control" id="cif" formControlName="cif" required>
+        <input type="text" class="form-control" id="cif" formControlName="cif" [(ngModel)]="proveedor.cif" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.cif.invalid && !!proveedorForm.controls.cif.touched">
-          El campo C.I.F. es obligatorio.
+          El campo Fecha Presupuesto es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="direccion">Dirección</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.direccion.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.direccion.invalid && !!proveedorForm.controls.direccion.touched"></i>
-        <input type="text" class="form-control" id="direccion" formControlName="direccion" required>
+        <input type="text" class="form-control" id="direccion" formControlName="direccion" [(ngModel)]="proveedor.direccion" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.direccion.invalid && !!proveedorForm.controls.direccion.touched">
-          El campo Dirección es obligatorio.
+          El campo Fecha Presupuesto es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="cp">Código Postal</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.cp.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.cp.invalid && !!proveedorForm.controls.cp.touched"></i>
-        <input type="text" class="form-control" id="cp" formControlName="cp" required>
+        <input type="number" class="form-control" id="cp" formControlName="cp" [(ngModel)]="proveedor.cp" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.cp.invalid && !!proveedorForm.controls.cp.touched">
-          El campo Código Postal es obligatorio.
+          El campo Fecha Presupuesto es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="localidad">Localidad</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.localidad.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.localidad.invalid && !!proveedorForm.controls.localidad.touched"></i>
-        <input type="text" class="form-control" id="localidad" formControlName="localidad" required>
+        <input type="text" class="form-control" id="localidad" formControlName="localidad" [(ngModel)]="proveedor.localidad" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.localidad.invalid && !!proveedorForm.controls.localidad.touched">
-          El campo Localidad es obligatorio.
+          El campo Fecha Presupuesto es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="provincia">Provincia</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.provincia.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.provincia.invalid && !!proveedorForm.controls.provincia.touched"></i>
-        <select class="form-control" id="provincia" formControlName="provincia" required>
+        <select class="form-control" id="provincia" formControlName="provincia" [(ngModel)]="proveedor.provincia" required>
           <option value="">Seleccione la provincia</option>
           <option *ngFor="let provincia of provincias" [value]="provincia">{{provincia}}</option>
         </select>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.provincia.invalid && !!proveedorForm.controls.provincia.touched">
-          El campo Provincia es obligatorio.
+          El campo provincia es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="telefono">Teléfono</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.telefono.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.telefono.invalid && !!proveedorForm.controls.telefono.touched"></i>
-        <input type="number" class="form-control" id="telefono" formControlName="telefono" required>
+        <input type="number" class="form-control" id="telefono" formControlName="telefono" [(ngModel)]="proveedor.telefono" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.telefono.invalid && !!proveedorForm.controls.telefono.touched">
-          El campo Teléfono es obligatorio.
+          El campo Fecha Presupuesto es obligatorio.
         </p>
       </div>
       <div class="form-group">
         <label for="email">Correo Electrónico</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.email.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.email.invalid && !!proveedorForm.controls.email.touched"></i>
-        <input type="text" class="form-control" id="email" formControlName="email" required email>
+        <input type="text" class="form-control" id="email" formControlName="email" email [(ngModel)]="proveedor.email" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.email.invalid && !!proveedorForm.controls.email.touched">
           Por favor introduzca una dirección de correo correcta.
         </p>
@@ -83,22 +83,15 @@
         <label for="contacto">Persona de contacto</label>
         <i class="fa fa-check-circle check" *ngIf="!!proveedorForm.controls.contacto.valid"></i>
         <i class="fa fa-exclamation-circle uncheck" *ngIf="!!proveedorForm.controls.contacto.invalid && !!proveedorForm.controls.contacto.touched"></i>
-        <input type="text" class="form-control" id="contacto" formControlName="contacto" required>
+        <input type="text" class="form-control" id="contacto" formControlName="contacto" [(ngModel)]="proveedor.contacto" required>
         <p class="alert alert-danger" *ngIf="!!proveedorForm.controls.contacto.invalid && !!proveedorForm.controls.contacto.touched">
-          El campo contacto es obligatorio.
+          Por favor introduzca una dirección de correo correcta.
         </p>
       </div>
-      <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Añadir Proveedor</button>
+      <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Editar Proveedor</button>
       <a class="btn btn-danger" routerLink="/proveedores">Cancelar</a>
       <p class="alert alert-danger" *ngIf="!!!proveedorForm.valid">Por favor complete todos los campos</p>
       <hr>
-      <pre> Estado Dirty: {{ !!proveedorForm.controls.email.dirty }}</pre>
-      <pre> Estado Pristine: {{ !!proveedorForm.controls.email.pristine }}</pre>
-      <pre> Estado Touched: {{ !!proveedorForm.controls.email.touched }}</pre>
-      <pre> Estado Valid: {{ !!proveedorForm.controls.email.valid }}</pre>
-      <pre> Estado Invalid: {{ !!proveedorForm.controls.email.invalid }}</pre>
     </form>
-    <hr>
-    <pre>{{ proveedor | json }}</pre>
   </div>
 </div>

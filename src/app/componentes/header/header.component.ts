@@ -9,16 +9,10 @@ import { AuthService } from 'src/app/core/auth.service';
 export class HeaderComponent {
   correo: any = null;
 
-  constructor(public auth: AuthService) {
-    this.auth.user.forEach(element => {
-      try {
-        this.correo = element.email;
-      } catch (e) {
-        this.correo = null;
-      }
-    });
-   }
+  constructor(public auth: AuthService) {}
 
-
+   isAuth() {
+    return this.auth.isAuthenticated();
+  }
 
 }

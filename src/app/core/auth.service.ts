@@ -35,7 +35,6 @@ export class AuthService {
   }
 
   async registroUsuario (userdata) {
-    // this.afAuth.auth.createUserWithEmailAndPassword(userdata.email, userdata.password).catch(error => {alert(error);})
     const credential = await this.afAuth.auth.createUserWithEmailAndPassword(userdata.email, userdata.password);
     return this.updateUserData(credential.user)
     .then(() => {
@@ -153,4 +152,12 @@ export class AuthService {
     });
   }
 
+  isAuthenticated() {
+    const user = this.afAuth.auth.currentUser;
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
